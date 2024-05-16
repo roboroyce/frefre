@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+        }
+        nav a:hover {
+            background-color: #ddd;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+    </header>
+    <nav>
+        <a href="#">Dashboard</a>
+        <a href="#">Manage Users</a>
+        <a href="#">Manage Content</a>
+        <!-- Add more links for other functionalities -->
+    </nav>
+    <section>
+        <h2>User List</h2>
+        <ul>
+            <?php
+            // Sample PHP code to fetch and display user list
+            $users = array("User 1", "User 2", "User 3");
+            foreach ($users as $user) {
+                echo "<li>$user</li>";
+            }
+            ?>
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; <?php echo date("Y"); ?> Your Company</p>
+    </footer>
+</body>
+</html>
