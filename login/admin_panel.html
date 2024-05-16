@@ -1,96 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        nav {
-            background-color: #f4f4f4;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            text-decoration: none;
-            color: #333;
-            padding: 10px 20px;
-        }
-        nav a:hover {
-            background-color: #ddd;
-        }
-        section {
-            padding: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <h1>Admin Panel</h1>
-    </header>
-    <nav>
-        <a href="#">Dashboard</a>
-        <a href="#">Manage Users</a>
-        <a href="#">Manage Content</a>
-        <a href="#">Settings</a>
-        <!-- Add more links for other functionalities -->
-    </nav>
-    <section>
-        <!-- Placeholder for Dashboard -->
-        <h2>Dashboard</h2>
-        <p>Welcome to the Admin Panel Dashboard. Choose an option from the navigation menu.</p>
-        
-        <!-- Placeholder for Manage Users -->
-        <h2>Manage Users</h2>
-        <p>List of users:</p>
-        <ul>
-            <?php
-            // Sample PHP code to fetch and display user list
-            $users = array("User 1", "User 2", "User 3");
-            foreach ($users as $user) {
-                echo "<li>$user</li>";
-            }
-            ?>
-        </ul>
-        
-        <!-- Placeholder for Manage Content -->
-        <h2>Manage Content</h2>
-        <p>List of content:</p>
-        <ul>
-            <?php
-            // Sample PHP code to fetch and display content list
-            $content = array("Content 1", "Content 2", "Content 3");
-            foreach ($content as $item) {
-                echo "<li>$item</li>";
-            }
-            ?>
-        </ul>
-        
-        <!-- Placeholder for Settings -->
-        <h2>Settings</h2>
-        <p>Configure your settings here.</p>
-    </section>
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> Your Company</p>
-    </footer>
+    <h1>Welcome to the Admin Panel</h1>
+    <form method="post" action="/edit_file.php">
+        <label for="file_path">File Path:</label><br>
+        <input type="text" id="file_path" name="file_path"><br>
+        <label for="file_content">File Content:</label><br>
+        <textarea id="file_content" name="file_content" rows="10" cols="50"></textarea><br>
+        <input type="submit" value="Edit File">
+    </form>
 </body>
 </html>
