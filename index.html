@@ -3,53 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Upload and Navigate</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 5px 0;
-        }
-        #navigateButton {
-            margin-top: 10px;
-        }
-    </style>
+    <title>Directory Link Example</title>
 </head>
 <body>
-    <h1>Select a File and Navigate</h1>
-    <input type="file" id="fileInput">
-    <button id="navigateButton" disabled>Go to Website</button>
-    <ul id="fileList"></ul>
-
-    <script>
-        document.getElementById('fileInput').addEventListener('change', function(event) {
-            const fileList = document.getElementById('fileList');
-            fileList.innerHTML = ''; // Clear the list
-            
-            const files = event.target.files;
-            if (files.length > 0) {
-                const listItem = document.createElement('li');
-                listItem.textContent = files[0].name;
-                fileList.appendChild(listItem);
-
-                // Enable the navigate button when a file is selected
-                document.getElementById('navigateButton').disabled = false;
-            } else {
-                document.getElementById('navigateButton').disabled = true;
-            }
-        });
-
-        document.getElementById('navigateButton').addEventListener('click', function() {
-            // Define the URL to navigate to
-            const url = 'https://www.example.com';
-            window.location.href = url;
-        });
-    </script>
+    <h1>Welcome to My Website</h1>
+    <p>game websites below</p>
+    <a href="/minecraft/" target="_blank">Go to minecraft</a>
 </body>
 </html>
