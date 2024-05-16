@@ -51,10 +51,17 @@
         <a href="#">Dashboard</a>
         <a href="#">Manage Users</a>
         <a href="#">Manage Content</a>
+        <a href="#">Settings</a>
         <!-- Add more links for other functionalities -->
     </nav>
     <section>
-        <h2>User List</h2>
+        <!-- Placeholder for Dashboard -->
+        <h2>Dashboard</h2>
+        <p>Welcome to the Admin Panel Dashboard. Choose an option from the navigation menu.</p>
+        
+        <!-- Placeholder for Manage Users -->
+        <h2>Manage Users</h2>
+        <p>List of users:</p>
         <ul>
             <?php
             // Sample PHP code to fetch and display user list
@@ -64,6 +71,23 @@
             }
             ?>
         </ul>
+        
+        <!-- Placeholder for Manage Content -->
+        <h2>Manage Content</h2>
+        <p>List of content:</p>
+        <ul>
+            <?php
+            // Sample PHP code to fetch and display content list
+            $content = array("Content 1", "Content 2", "Content 3");
+            foreach ($content as $item) {
+                echo "<li>$item</li>";
+            }
+            ?>
+        </ul>
+        
+        <!-- Placeholder for Settings -->
+        <h2>Settings</h2>
+        <p>Configure your settings here.</p>
     </section>
     <footer>
         <p>&copy; <?php echo date("Y"); ?> Your Company</p>
