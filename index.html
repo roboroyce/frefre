@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Selector</title>
+    <title>Select Directory</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,19 +19,19 @@
     </style>
 </head>
 <body>
-    <h1>Select Files</h1>
-    <input type="file" id="fileInput" multiple>
+    <h1>Select a Directory</h1>
+    <input type="file" id="directoryInput" webkitdirectory>
     <ul id="fileList"></ul>
 
     <script>
-        document.getElementById('fileInput').addEventListener('change', function(event) {
+        document.getElementById('directoryInput').addEventListener('change', function(event) {
             const fileList = document.getElementById('fileList');
             fileList.innerHTML = ''; // Clear the list
             
             const files = event.target.files;
             for (let i = 0; i < files.length; i++) {
                 const listItem = document.createElement('li');
-                listItem.textContent = files[i].name;
+                listItem.textContent = files[i].webkitRelativePath || files[i].name;
                 fileList.appendChild(listItem);
             }
         });
