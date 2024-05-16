@@ -5,12 +5,29 @@
 </head>
 <body>
     <h1>Welcome to the Admin Panel</h1>
-    <form method="post" action="/edit_file.php">
-        <label for="file_path">File Path:</label><br>
-        <input type="text" id="file_path" name="file_path"><br>
-        <label for="file_content">File Content:</label><br>
-        <textarea id="file_content" name="file_content" rows="10" cols="50"></textarea><br>
-        <input type="submit" value="Edit File">
-    </form>
+    <label for="file_path">File Path:</label><br>
+    <input type="text" id="file_path" name="file_path"><br>
+    <label for="file_content">File Content:</label><br>
+    <textarea id="file_content" name="file_content" rows="10" cols="50"></textarea><br>
+    <button onclick="editFile()">Edit File</button>
+
+    <script>
+        function editFile() {
+            // Retrieve file path and content from form
+            var filePath = document.getElementById("file_path").value;
+            var fileContent = document.getElementById("file_content").value;
+            
+            // Create a data URI for the file content
+            var dataUri = "data:text/plain;charset=utf-8," + encodeURIComponent(fileContent);
+            
+            // Create a temporary link element
+            var link = document.createElement("a");
+            link.setAttribute("href", dataUri);
+            link.setAttribute("download", filePath);
+            
+            // Simulate a click on the link to trigger download
+            link.click();
+        }
+    </script>
 </body>
 </html>
