@@ -2,31 +2,80 @@
 <html>
 <head>
     <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            resize: none;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Admin Panel</h1>
-    <label for="file_path">File Path:</label><br>
-    <input type="text" id="file_path" name="file_path"><br>
-    <label for="file_content">File Content:</label><br>
-    <textarea id="file_content" name="file_content" rows="10" cols="50"></textarea><br>
-    <button onclick="editFile()">Edit File</button>
+    <div class="container">
+        <h1>Welcome to the Admin Panel</h1>
+        <label for="file_path">File Path:</label>
+        <input type="text" id="file_path" name="file_path">
+        <label for="file_content">File Content:</label>
+        <textarea id="file_content" name="file_content" rows="6"></textarea>
+        <button onclick="editFile()">Edit File</button>
+    </div>
 
     <script>
         function editFile() {
-            // Retrieve file path and content from form
             var filePath = document.getElementById("file_path").value;
             var fileContent = document.getElementById("file_content").value;
-            
-            // Create a data URI for the file content
             var dataUri = "data:text/plain;charset=utf-8," + encodeURIComponent(fileContent);
-            
-            // Create a temporary link element
             var link = document.createElement("a");
             link.setAttribute("href", dataUri);
             link.setAttribute("download", filePath);
-            
-            // Simulate a click on the link to trigger download
+            link.style.display = "none";
+            document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>
